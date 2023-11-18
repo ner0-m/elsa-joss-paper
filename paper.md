@@ -65,19 +65,37 @@ internal structures. Unlike traditional radiography, CT generates
 reconstructions through computation, which introduced the need for software
 frameworks. Popular frameworks include ASTRA [@vanAarle2016], scico
 [@balke2022], and the Core Imaging Library [@Jrgensen2021;@Papoutsellis2021],
-or ODL [@Adler2017].
+or ODL [@Adler2017]. \autoref{fig:seashell_walnut} shows slices from two
+example reconstruction using elsa.
+
+![Example reconstruction of two different attenuation X-ray CT datasets. Left:
+Axial center slice of the walnut provided in @meaney2022. Right: Lateral
+center slice of the seashell of the dataset provided by
+@kamutta2022.\label{fig:seashell_walnut}](imgs/seashell_walnut.png)
 
 In recent years, one of the major challenges tackled by research is the
 reduction of X-ray dose. As X-ray dose can be harmful to humans, it is vital to
 reduce it as much as possible. However, a reduction of the X-ray dose usually
 results in worse reconstruction quality. Many reconstruction techniques have
 been developed to maintain a high reconstruction quality with a reduced X-ray
-dosage. However, till today this remains an open problem.
+dosage. However, till today this remains an open problem. \autoref{fig:2detect}
+illustrates the differences of a high-dose and 3 different low-dose
+reconstruction. The low-dose reconstruction use different optimisation problems
+to better model the noise characteristics found in low-dose X-ray CT.
+
+
+![Reconstruction of slice 29 of the 2DeteCT dataset [@kiss2023]. Left most
+image is a reconstruction of high-dose data, the left three images are using
+the low-dose measurements. The three low-dose reconstruction differ in the
+noise assumption (Gaussian, an approximation of Poisson and a Poisson assumption)
+\label{fig:2detect}](imgs/2detect.png)
 
 Classical X-ray CT, reliant on X-ray attenuation, faces limitations in soft
 tissue contrast and spatial resolution. The advent of modern imaging
 modalities, considering additional physical effects such as phase, refraction,
 and scatter, introduces both opportunities and challenges.
+
+![Some image of AXDT\label{fig:axdt}](imgs/axdt.png)
 
 In this landscape, elsa emerges as a distinctive framework focusing on
 iterative reconstruction techniques for modern X-ray CT imaging modalities.
