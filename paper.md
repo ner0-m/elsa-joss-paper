@@ -1,5 +1,5 @@
 ---
-title: '**elsa**: an elegeant framework for tomographic reconstruction'
+title: '**elsa**: an elegant framework for tomographic reconstruction'
 tags:
   - Computed Tomography
   - X-ray Computed Tomography
