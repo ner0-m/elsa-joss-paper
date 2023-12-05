@@ -32,17 +32,17 @@ bibliography: paper.bib
 
 # Summary
 
-elsa is a versatile framework in the landscape of X-ray tomography, offering a powerful toolkit for developing iterative reconstruction algorithms. It is primarily designed for challenging applications in classical attenuation X-ray computed tomography (CT) and advanced modalities like Phase-Contrast X-ray CT (PCCT) [@pfeiffer2006] or Anisotropic Dark-field tomography (AXDT) [@wieczorek2016]. elsa stands out with an expansive set of building blocks and a unified abstraction, providing the means for high-quality reconstructions across a spectrum of imaging modalities and applications.
+elsa is a versatile framework in the landscape of X-ray tomography, offering a powerful toolkit for developing iterative reconstruction algorithms. It is primarily designed for challenging applications in classical attenuation X-ray computed tomography (CT) and advanced modalities like Phase-Contrast X-ray CT (PCCT) or Anisotropic Dark-field tomography (AXDT). elsa stands out with an expansive set of building blocks and a unified abstraction, providing the means for high-quality reconstructions across a spectrum of imaging modalities and applications.
 
 Designed as an operator- and optimisation-based framework, elsa takes a mathematical approach to model the reconstruction pipeline of imaging modalities. Through formulating optimization problems and a suite of iterative reconstruction algorithms, elsa addresses challenges in attenuation X-ray CT, PCCT, and AXDT.
 
 The core of elsa, developed in modern C++ with GPU acceleration, ensures efficiency, while its Python interface enhances accessibility for students and researchers.
 
-Distinctively, elsa positions itself as a unique solution by supporting modern iterative reconstruction techniques for novel X-ray CT imaging modalities. The framework addresses challenges associated with X-ray CT, such as arbitrary trajectories, automatic differentiation, differential signals for PCCT, and spherical function valued reconstructions for AXDT, offering a simple abstraction for implementing tailored reconstruction methods
+Distinctively, elsa positions itself as a unique solution by supporting modern iterative reconstruction techniques for novel X-ray CT imaging modalities. The framework addresses challenges associated with X-ray CT, such as arbitrary trajectories, automatic differentiation, differential signals for PCCT, and spherical function valued reconstructions for AXDT, offering a simple abstraction for implementing tailored reconstruction methods.
 
 # Statement of need
 
-The introduction of X-ray Computed Tomography (CT) in the 1970s revolutionized medical diagnostics, offering unprecedented insights into the human body’s internal structures. Unlike traditional radiography, CT requires reconstructions through computation, which introduced the need for software frameworks. Popular frameworks include ASTRA [@vanAarle2016], SCICO [@balke2022], the Core Imaging Library [@Jrgensen2021;@Papoutsellis2021], and ODL [@Adler2017]. These standard reconstructions of attenuation X-ray CT can also be performed using elsa, see \autoref{fig:seashell_walnut}.
+The introduction of X-ray Computed Tomography (CT) in the 1970s revolutionized medical diagnostics, offering unprecedented insights into the human body's internal structures. Unlike traditional radiography, CT requires reconstructions through computation, which introduced the need for software frameworks. Popular frameworks include ASTRA [@vanAarle2016], SCICO [@balke2022], the Core Imaging Library [@Jrgensen2021;@Papoutsellis2021], and ODL [@Adler2017]. These standard reconstructions of attenuation X-ray CT can also be performed using elsa, see \autoref{fig:seashell_walnut}.
 
 ![Example reconstructions of two different attenuation X-ray CT datasets. Left: Axial center slice of the walnut dataset from @meaney2022. Right: Lateral center slice of the seashell dataset from @kamutta2022. The reconstructions can be reproduced using the script available in the elsa repository at `examples/dataset/fips_apgd_nonneg.py`. \label{fig:seashell_walnut}. ](imgs/seashell_walnut.png)
 
@@ -60,17 +60,17 @@ elsa has been integral to our group's research and vital to our scientific publi
 
 # Supported Features
 
-Reconstruction problems are formulated as mathematical optimization problems within elsa, i.e. one minimizes a data fidelity term, augmented with regularization for incorporating prior knowledge. The framework automatically computes gradients for these problems.
+Reconstruction problems are formulated as mathematical optimization problems within elsa, i.e. one minimizes a data fidelity term, augmented with regularization to incorporate prior knowledge. The framework automatically computes first and second derivatives for these problems.
 
 elsa accommodates diverse data fidelity terms, such as (weighted) least squares and Poisson log-likelihood, and supports a variety of regularization techniques, including L2, sparsity-inducing L1, total variation, and Plug-and-Play (PnP) priors.
 
 Tailoring to specific problem formulations, elsa supports a diverse set of iterative reconstruction algorithms, including gradient-based methods (FGM, OGM), splitting-based methods (ISTA, FISTA, ADMM), and primal-dual algorithms (PDHG).
 
-The framework implements multiple forward model approximations for attenuation X-ray CT, available for both CPU and CUDA. These approximations support arbitrary cone-beam geometry via projection matrices. For PCCT, the forward model employs differentiable Kaiser-Bessel basis functions and B-Splines, with additional support for spherical functions and harmonics.
+elsa implements multiple forward model approximations for attenuation X-ray CT, such as the Siddon's and Joseph's method, available for both CPU and CUDA. All our models support arbitrary acquisition trajectories in cone-beam geometry via projection matrices. For PCCT, the forward model employs differentiable Kaiser-Bessel functions and B-Splines, with additional support for spherical functions and spherical harmonics.
 
-elsa implements different approximations of the forward model for attenuation X-ray CT. These approximations include the so-called Siddons and Josephs method and are implemented both for CPU and CUDA. All our models support arbitrary cone-beam geometry, which can be represented using a projection matrix. For PCCT, the forward model is implement using both differentiable Kaiser-Bessel basis functions and B-Splines. Further spherical functions and spherical harmonics are implemented in the framework.
+elsa implements multiple forward model approximations for attenuation X-ray CT, such as the Siddon's and Joseph's method, available for both CPU and CUDA. All our models support arbitrary acquisition trajectories in cone-beam geometry via projection matrices. For PCCT, the forward model employs differentiable Kaiser-Bessel functions and B-Splines, with additional support for spherical functions and spherical harmonics.
 
-Developed in modern C++, elsa features an accessible Python interface. Comprehensive Python examples, such as those in \autoref{fig:seashell_walnut} and \autoref{fig:2detect}, accompany the software. The documentation, hosted at \url{https://ciip.in.tum.de/elsadocs/}, includes API documentation, guides, and tutorials. elsa maintains code correctness and quality through a stable, continuously running CI pipeline and high test coverage.
+Developed in modern C++, elsa features an accessible Python interface. Comprehensive Python examples, such as those in \autoref{fig:seashell_walnut} and \autoref{fig:2detect}, accompany the software. The documentation, hosted at \url{https://ciip.cit.tum.de/elsadocs/}, includes API documentation, guides, and tutorials. elsa maintains code correctness and quality through a stable, continuously running CI pipeline and high test coverage.
 
 # Acknowledgment
 
