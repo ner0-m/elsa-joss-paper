@@ -29,7 +29,6 @@ bibliography: paper.bib
 # aas-doi: 10.3847/xxxxx <- update this with the DOI from AAS once you know it.
 # aas-journal: Astrophysical Journal <- The name of the AAS journal.
 ---
-
 # Summary
 
 elsa is a versatile framework in the landscape of X-ray tomography, offering a powerful toolkit for developing iterative reconstruction algorithms. It is primarily designed for challenging applications in classical attenuation X-ray computed tomography (CT) and advanced modalities like Phase-Contrast X-ray CT (PCCT) or Anisotropic Dark-field tomography (AXDT). elsa stands out with an expansive set of building blocks and a unified abstraction, providing the means for high-quality reconstructions across a spectrum of imaging modalities and applications.
@@ -44,7 +43,7 @@ Distinctively, elsa positions itself as a unique solution by supporting modern i
 
 The introduction of X-ray Computed Tomography (CT) in the 1970s revolutionized medical diagnostics, offering unprecedented insights into the human body's internal structures. Unlike traditional radiography, CT requires reconstructions through computation, which introduced the need for software frameworks. Popular frameworks include ASTRA [@vanAarle2016], SCICO [@balke2022], the Core Imaging Library [@Jrgensen2021;@Papoutsellis2021], and ODL [@Adler2017]. These standard reconstructions of attenuation X-ray CT can also be performed using elsa, see \autoref{fig:seashell_walnut}.
 
-![Example reconstructions of two different attenuation X-ray CT datasets. Left: Axial center slice of the walnut dataset from @meaney2022. Right: Lateral center slice of the seashell dataset from @kamutta2022. The reconstructions can be reproduced using the script available in the elsa repository at `examples/dataset/fips_apgd_nonneg.py`. \label{fig:seashell_walnut}. ](imgs/seashell_walnut.png)
+![Example reconstructions of two different attenuation X-ray CT datasets. Left: Axial center slice of the walnut dataset from @meaney2022. Right: Lateral center slice of the seashell dataset from @kamutta2022. The reconstructions can be reproduced using the script available in the elsa repository at `examples/dataset/fips_apgd_nonneg.py`. \label{fig:seashell_walnut}](imgs/seashell_walnut.png)
 
 In recent years, one of the major challenges tackled by research is the reduction of X-ray dose. As X-rays can induce harm in humans, reducing the dose as much as possible is vital. However, reducing the X-ray dose results in worse reconstruction quality. Many reconstruction techniques have been developed to maintain a high reconstruction quality with a reduced X-ray dosage. However, until today, this remains an challenging problem. \autoref{fig:2detect} highlights this challenge on the 2DeteCT dataset [@kiss2023]. It illustrates the intricacies of low-dose reconstruction and demonstrates the versatility of elsa in handling diverse optimization problems for different noise assumptions.
 
@@ -65,8 +64,6 @@ Reconstruction problems are formulated as mathematical optimization problems wit
 elsa accommodates diverse data fidelity terms, such as (weighted) least squares and Poisson log-likelihood, and supports a variety of regularization techniques, including L2, sparsity-inducing L1, total variation, and Plug-and-Play (PnP) priors.
 
 Tailoring to specific problem formulations, elsa supports a diverse set of iterative reconstruction algorithms, including gradient-based methods (FGM, OGM), splitting-based methods (ISTA, FISTA, ADMM), and primal-dual algorithms (PDHG).
-
-elsa implements multiple forward model approximations for attenuation X-ray CT, such as the Siddon's and Joseph's method, available for both CPU and CUDA. All our models support arbitrary acquisition trajectories in cone-beam geometry via projection matrices. For PCCT, the forward model employs differentiable Kaiser-Bessel functions and B-Splines, with additional support for spherical functions and spherical harmonics.
 
 elsa implements multiple forward model approximations for attenuation X-ray CT, such as the Siddon's and Joseph's method, available for both CPU and CUDA. All our models support arbitrary acquisition trajectories in cone-beam geometry via projection matrices. For PCCT, the forward model employs differentiable Kaiser-Bessel functions and B-Splines, with additional support for spherical functions and spherical harmonics.
 
