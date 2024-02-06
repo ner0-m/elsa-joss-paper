@@ -12,10 +12,13 @@ tags:
 authors:
   - name: David Frank
     affiliation: "1, 2"
+    orcid: 0009-0006-4989-2144
   - name: Jonas Jelten
     affiliation: "1, 2"
+    orcid: 0000-0002-5167-2419
   - name: Tobias Lasser
     affiliation: "1, 2"
+    orcid: 0000-0001-5669-920X
 affiliations:
  - name: Department of Computer Science, TUM School of Computation, Information and Technology, Technical University of Munich, Munich, Germany
    index: 1
